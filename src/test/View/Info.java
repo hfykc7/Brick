@@ -1,7 +1,5 @@
 package test.View;
 
-import test.Controller.GameFrame;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;

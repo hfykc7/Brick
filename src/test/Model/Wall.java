@@ -1,6 +1,6 @@
 /*
  *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
+ *   Copyright (C) 2021  Cheo Kai Wen
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,7 +22,6 @@ import test.Model.*;
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
-
 
 public class Wall {
 
@@ -73,8 +72,6 @@ public class Wall {
         player = new Player((Point) ballPos.clone(),150,10, drawArea);
 
         area = drawArea;
-
-
     }
 
     private Brick[] makeSingleTypeLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int type){
@@ -114,7 +111,6 @@ public class Wall {
             tmp[i] = new ClayBrick(p,brickSize);
         }
         return tmp;
-
     }
 
     private Brick[] makeChessboardLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
@@ -310,5 +306,4 @@ public class Wall {
         }
         return  out;
     }
-
 }

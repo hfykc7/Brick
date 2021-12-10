@@ -1,6 +1,6 @@
 /*
  *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
+ *   Copyright (C) 2021  Cheo Kai Wen
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,7 +21,6 @@ import test.Model.Ball;
 import test.Controller.DebugPanel;
 import test.Controller.GameBoard;
 import test.Model.Wall;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -31,12 +30,10 @@ public class DebugConsole extends JDialog implements WindowListener{
 
     private static final String TITLE = "Debug Console";
 
-
     private JFrame owner;
     private DebugPanel debugPanel;
     private GameBoard gameBoard;
     private Wall wall;
-
 
     public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){
 
@@ -47,7 +44,6 @@ public class DebugConsole extends JDialog implements WindowListener{
 
         debugPanel = new DebugPanel(wall);
         this.add(debugPanel,BorderLayout.CENTER);
-
 
         this.pack();
     }
@@ -61,13 +57,11 @@ public class DebugConsole extends JDialog implements WindowListener{
         this.setFocusable(true);
     }
 
-
     private void setLocation(){
         int x = ((owner.getWidth() - this.getWidth()) / 2) + owner.getX();
         int y = ((owner.getHeight() - this.getHeight()) / 2) + owner.getY();
         this.setLocation(x,y);
     }
-
 
     @Override
     public void windowOpened(WindowEvent windowEvent) {

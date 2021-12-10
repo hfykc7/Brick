@@ -1,6 +1,6 @@
 /*
  *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
+ *   Copyright (C) 2021  Cheo Kai Wen
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,9 +21,7 @@ import test.Model.Ball;
 
 import java.awt.*;
 
-
 public class Player {
-
 
     public static final Color BORDER_COLOR = Color.GRAY;
     public static final Color INNER_COLOR = Color.LIGHT_GRAY;
@@ -36,14 +34,12 @@ public class Player {
     private int min;
     private int max;
 
-
     public Player(Point ballPoint,int width,int height,Rectangle container) {
         this.ballPoint = ballPoint;
         moveAmount = 0;
         playerFace = makeRectangle(width, height);
         min = container.x + (width / 2);
         max = min + container.width - width;
-
     }
 
     private Rectangle makeRectangle(int width,int height){

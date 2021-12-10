@@ -1,6 +1,6 @@
 /*
  *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
+ *   Copyright (C) 2021  Cheo Kai Wen
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -15,8 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test.Controller;
+package test.View;
 
+import test.Controller.GameBoard;
 import test.View.HomeMenu;
 import test.View.Info;
 
@@ -24,7 +25,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
-
 
 public class GameFrame extends JFrame implements WindowFocusListener {
 

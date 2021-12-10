@@ -1,6 +1,6 @@
 /*
  *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
+ *   Copyright (C) 2021  Cheo Kai Wen
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,15 +17,13 @@
  */
 package test.Model;
 
-import test.Controller.GameFrame;
+import test.View.GameFrame;
 
 import java.awt.*;
 
-
-public class GraphicsMain {
+public class GraphicsMain{
 
     public static void main(String[] args){
         EventQueue.invokeLater(() -> new GameFrame().initialize());
     }
-
 }

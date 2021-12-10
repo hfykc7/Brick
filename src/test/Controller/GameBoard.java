@@ -1,6 +1,6 @@
 /*
  *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
+ *   Copyright (C) 2021  Cheo Kai Wen
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -27,7 +27,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
-
 
 
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
@@ -271,7 +270,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 wall.player.moveLeft();
                 break;
             case KeyEvent.VK_RIGHT:
-                wall.player.movRight();
+                wall.player.moveRight();
                 break;
             case KeyEvent.VK_ESCAPE:
                 showPauseMenu = !showPauseMenu;
@@ -314,10 +313,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             showPauseMenu = false;
             repaint();
         }
-        else if(exitButtonRect.contains(p)){
+        else if(exitButtonRect.contains(p))
             System.exit(0);
-        }
-
     }
 
     @Override
@@ -354,9 +351,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
             else
                 this.setCursor(Cursor.getDefaultCursor());
         }
-        else{
+        else
             this.setCursor(Cursor.getDefaultCursor());
-        }
     }
 
     public void onLostFocus(){
@@ -364,5 +360,4 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         message = "Focus Lost";
         repaint();
     }
-
 }

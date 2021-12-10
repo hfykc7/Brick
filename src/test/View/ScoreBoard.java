@@ -1,7 +1,7 @@
 package test.View;
 
 import test.Controller.FileController;
-import test.Controller.GameFrame;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,8 +15,6 @@ public class ScoreBoard {
         Integer[] scores = FileController.readFromFile();
         Arrays.sort(scores, Collections.reverseOrder());
         return Arrays.toString(Arrays.stream(scores).limit(scoresToPrint).toArray());
-
-
     }
 }
 

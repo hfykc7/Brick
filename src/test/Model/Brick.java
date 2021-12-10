@@ -15,14 +15,10 @@ abstract public class Brick  {
     public static final int MIN_CRACK = 1;
     public static final int DEF_CRACK_DEPTH = 1;
     public static final int DEF_STEPS = 35;
-
-
     public static final int UP_IMPACT = 100;
     public static final int DOWN_IMPACT = 200;
     public static final int LEFT_IMPACT = 300;
     public static final int RIGHT_IMPACT = 400;
-
-
 
     public class Crack{
 
@@ -36,26 +32,18 @@ abstract public class Brick  {
         public static final int VERTICAL = 100;
         public static final int HORIZONTAL = 200;
 
-
-
         private GeneralPath crack;
 
         private int crackDepth;
         private int steps;
 
-
         public Crack(int crackDepth, int steps){
-
             crack = new GeneralPath();
             this.crackDepth = crackDepth;
             this.steps = steps;
-
         }
 
-
-
         public GeneralPath draw(){
-
             return crack;
         }
 
@@ -69,7 +57,6 @@ abstract public class Brick  {
             Point impact = new Point((int)point.getX(),(int)point.getY());
             Point start = new Point();
             Point end = new Point();
-
 
             switch(direction){
                 case LEFT:
@@ -99,7 +86,6 @@ abstract public class Brick  {
                     makeCrack(impact,tmp);
 
                     break;
-
             }
         }
 
@@ -127,7 +113,6 @@ abstract public class Brick  {
                     y += jumps(jump,JUMP_PROBABILITY);
 
                 path.lineTo(x,y);
-
             }
 
             path.lineTo(end.x,end.y);
@@ -171,7 +156,6 @@ abstract public class Brick  {
             }
             return out;
         }
-
     }
 
     private static Random rnd;
