@@ -254,7 +254,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
         y *= 1.2;
 
-
         infoButton.setLocation(x,y);
 
         x = (int)(infoButton.getWidth() - iTxtRect.getWidth()) / 2;
@@ -281,7 +280,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         y = infoButton.y;
 
         y *= 1.2;
-
     }
 
     @Override
@@ -341,7 +339,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
             infoClicked = false;
             repaint(infoButton.x,infoButton.y,infoButton.width+1,infoButton.height+1);
         }
-
     }
 
     @Override
@@ -353,7 +350,6 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     public void mouseExited(MouseEvent mouseEvent) {
 
     }
-
 
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {
@@ -367,6 +363,5 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
             this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         else
             this.setCursor(Cursor.getDefaultCursor());
-
     }
 }

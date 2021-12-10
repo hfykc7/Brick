@@ -194,8 +194,6 @@ abstract public class Brick  {
 
     public abstract Shape getBrick();
 
-
-
     public Color getBorderColor(){
         return  border;
     }
@@ -203,7 +201,6 @@ abstract public class Brick  {
     public Color getInnerColor(){
         return inner;
     }
-
 
     public final int findImpact(Ball b){
         if(broken)

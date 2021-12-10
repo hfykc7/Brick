@@ -58,7 +58,6 @@ abstract public class Ball {
         tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h);
         setPoints(w,h);
 
-
         ballFace = tmp;
     }
 
@@ -118,13 +117,7 @@ abstract public class Ball {
         right.setLocation(center.getX()+(width / 2),center.getY());
     }
 
-    public int getSpeedX(){
-        return speedX;
-    }
+    public int getSpeedX(){ return speedX; }
 
-    public int getSpeedY(){
-        return speedY;
-    }
-
-
+    public int getSpeedY(){ return speedY; }
 }

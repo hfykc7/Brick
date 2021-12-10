@@ -2,7 +2,6 @@ package test.View;
 
 import java.io.*;
 import javax.sound.sampled.*;
-import javax.swing.*;
 
 // To play sound using Clip, the process need to be alive.
 // Hence, we use a Swing application.

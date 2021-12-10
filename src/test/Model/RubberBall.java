@@ -17,8 +17,6 @@
  */
 package test.Model;
 
-import test.Model.Ball;
-
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;

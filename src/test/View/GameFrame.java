@@ -18,8 +18,6 @@
 package test.View;
 
 import test.Controller.GameBoard;
-import test.View.HomeMenu;
-import test.View.Info;
 
 import javax.swing.*;
 import java.awt.*;
@@ -116,6 +114,5 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     public void windowLostFocus(WindowEvent windowEvent) {
         if(gaming)
             gameBoard.onLostFocus();
-
     }
 }

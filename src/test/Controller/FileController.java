@@ -20,5 +20,4 @@ public class FileController {
         Stream<String> stream = Files.lines(Paths.get("Fileset/HighScore.txt"));
         return stream.map(x -> Integer.valueOf(x)).sorted().toArray(Integer[]::new);
     }
-
 }

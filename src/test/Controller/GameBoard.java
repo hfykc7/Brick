@@ -28,7 +28,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 
-
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
 
     private static final String CONTINUE = "Continue";
@@ -60,7 +59,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private int strLen;
 
     private DebugConsole debugConsole;
-
 
     public GameBoard(JFrame owner){
         super();

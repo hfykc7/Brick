@@ -17,8 +17,6 @@
  */
 package test.Model;
 
-import test.Model.*;
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
@@ -60,9 +58,11 @@ public class Wall {
 
         makeBall(ballPos);
         int speedX,speedY;
+
         do{
             speedX = rnd.nextInt(5) - 2;
         }while(speedX == 0);
+
         do{
             speedY = -rnd.nextInt(3);
         }while(speedY == 0);
@@ -242,9 +242,11 @@ public class Wall {
         player.moveTo(startPoint);
         ball.moveTo(startPoint);
         int speedX,speedY;
+
         do{
             speedX = rnd.nextInt(5) - 2;
         }while(speedX == 0);
+
         do{
             speedY = -rnd.nextInt(3);
         }while(speedY == 0);

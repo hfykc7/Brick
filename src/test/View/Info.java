@@ -18,7 +18,6 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     private static final String CONSOLE = "5. Press ALT + SHIFT + F1 : Open console";
     private static final String BACK_TEXT = "BACK TO MENU";
 
-
     private static final Color TEXT_COLOR = Color.BLACK;
     private static final Color CLICKED_BUTTON_COLOR = Color.DARK_GRAY;
     private static final Color CLICKED_TEXT = Color.GRAY;
@@ -222,7 +221,6 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     public void mouseExited(MouseEvent mouseEvent) {
 
     }
-
 
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {

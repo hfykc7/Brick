@@ -17,8 +17,6 @@
  */
 package test.Model;
 
-import test.Model.Ball;
-
 import java.awt.*;
 
 public class Player {
