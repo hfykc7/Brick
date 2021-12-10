@@ -1,4 +1,4 @@
-package test;
+package test.Model;
 
 import java.awt.*;
 import java.awt.Point;
@@ -249,12 +249,4 @@ abstract public class Brick  {
         strength--;
         broken = (strength == 0);
     }
-
-
-
 }
-
-
-
-
-

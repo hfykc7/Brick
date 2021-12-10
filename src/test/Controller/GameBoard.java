@@ -15,7 +15,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package test.Controller;
+
+import test.Model.Ball;
+import test.Model.Brick;
+import test.Model.Player;
+import test.Model.Wall;
+import test.View.DebugConsole;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,10 +69,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         strLen = 0;
         showPauseMenu = false;
 
-
-
         menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
-
 
         this.initialize();
         message = "";
@@ -101,13 +104,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                     gameTimer.stop();
                 }
             }
-
             repaint();
         });
-
     }
-
-
 
     private void initialize(){
         this.setPreferredSize(new Dimension(DEF_WIDTH,DEF_HEIGHT));
@@ -117,7 +116,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
     }
-
 
     public void paint(Graphics g){
 
@@ -158,11 +156,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(brick.getBorderColor());
         g2d.draw(brick.getBrick());
 
-
         g2d.setColor(tmp);
     }
 
-    private void drawBall(Ball ball,Graphics2D g2d){
+    private void drawBall(Ball ball, Graphics2D g2d){
         Color tmp = g2d.getColor();
 
         Shape s = ball.getBallFace();
@@ -176,7 +173,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(tmp);
     }
 
-    private void drawPlayer(Player p,Graphics2D g2d){
+    private void drawPlayer(Player p, Graphics2D g2d){
         Color tmp = g2d.getColor();
 
         Shape s = p.getPlayerFace();
@@ -213,7 +210,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         Font tmpFont = g2d.getFont();
         Color tmpColor = g2d.getColor();
 
-
         g2d.setFont(menuFont);
         g2d.setColor(PAUSE_COLOR);
 
@@ -230,7 +226,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         x = this.getWidth() / 8;
         y = this.getHeight() / 4;
-
 
         if(continueButtonRect == null){
             FontRenderContext frc = g2d.getFontRenderContext();

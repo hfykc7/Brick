@@ -1,4 +1,6 @@
-package test;
+package test.Model;
+
+import test.Model.Brick;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
