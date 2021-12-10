@@ -1,4 +1,5 @@
 package test;
 
-public class Scoreboard {
+public class ScoreBoard {
+    private static final String NAME = "Score Board";
 }

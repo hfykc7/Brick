@@ -28,11 +28,11 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private static final String CONTINUE = "Continue";
     private static final String RESTART = "Restart";
-    private static final String EXIT = "Exit";
+    private static final String EXIT = "Quit";
     private static final String PAUSE = "Pause Menu";
     private static final int TEXT_SIZE = 30;
-    private static final Color MENU_COLOR = new Color(0,255,0);
-
+    private static final Color MENU_COLOR = Color.ORANGE;
+    private static final Color PAUSE_COLOR = Color.WHITE;
 
     private static final int DEF_WIDTH = 600;
     private static final int DEF_HEIGHT = 450;
@@ -215,7 +215,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
 
         g2d.setFont(menuFont);
-        g2d.setColor(MENU_COLOR);
+        g2d.setColor(PAUSE_COLOR);
 
         if(strLen == 0){
             FontRenderContext frc = g2d.getFontRenderContext();
@@ -226,6 +226,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         int y = this.getHeight() / 10;
 
         g2d.drawString(PAUSE,x,y);
+        g2d.setColor(MENU_COLOR);
 
         x = this.getWidth() / 8;
         y = this.getHeight() / 4;
@@ -238,6 +239,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
 
         g2d.drawString(CONTINUE,x,y);
+        g2d.setColor(MENU_COLOR);
 
         y *= 2;
 
@@ -247,6 +249,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
 
         g2d.drawString(RESTART,x,y);
+        g2d.setColor(MENU_COLOR);
 
         y *= 3.0/2;
 
@@ -256,8 +259,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         }
 
         g2d.drawString(EXIT,x,y);
-
-
+        g2d.setColor(MENU_COLOR);
 
         g2d.setFont(tmpFont);
         g2d.setColor(tmpColor);
@@ -270,10 +272,10 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     @Override
     public void keyPressed(KeyEvent keyEvent) {
         switch(keyEvent.getKeyCode()){
-            case KeyEvent.VK_A:
+            case KeyEvent.VK_LEFT:
                 wall.player.moveLeft();
                 break;
-            case KeyEvent.VK_D:
+            case KeyEvent.VK_RIGHT:
                 wall.player.movRight();
                 break;
             case KeyEvent.VK_ESCAPE:
