@@ -72,6 +72,9 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     public HomeMenu(GameFrame owner,Dimension area){
         pic = Toolkit.getDefaultToolkit().getImage("pic/brick.jpeg");
 
+        Sound bgm = new Sound();
+        bgm.playSound("Sound/bgm.wav");
+
         this.setFocusable(true);
         this.requestFocusInWindow();
 
@@ -94,10 +97,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         borderStoke = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND,0,DASHES,0);
         borderStoke_noDashes = new BasicStroke(BORDER_SIZE,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND);
 
-        greetingsFont = new Font("DialogInput",Font.PLAIN,15);
-        gameTitleFont = new Font("Helvetica",Font.BOLD,40);
+        greetingsFont = new Font("DialogInput",Font.PLAIN,20);
+        gameTitleFont = new Font("CabbagetownStd",Font.BOLD,40);
         creditsFont = new Font("DialogInput",Font.PLAIN,10);
-        buttonFont = new Font("Serif",Font.PLAIN,startButton.height-2);
+        buttonFont = new Font("CooperHewitt-Book",Font.PLAIN,startButton.height-2);
     }
 
 
@@ -176,13 +179,13 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.drawString(GREETINGS,sX,sY);
 
         sX = (int)(menuFace.getWidth() - gameTitleRect.getWidth()) / 2;
-        sY += (int) gameTitleRect.getHeight() * 0.9;//add 10% of String height between the two strings
+        sY += (int) gameTitleRect.getHeight() * 1.1;//add 10% of String height between the two strings
 
         g2d.setFont(gameTitleFont);
         g2d.drawString(GAME_TITLE,sX,sY);
 
         sX = (int)(menuFace.getWidth() - creditsRect.getWidth()) / 2;
-        sY += (int) creditsRect.getHeight() * 1.1;
+        sY += (int) creditsRect.getHeight() * 1.5;
 
         g2d.setFont(creditsFont);
         g2d.drawString(CREDITS,sX,sY);
@@ -236,7 +239,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         y = (int)(menuButton.getHeight() - mTxtRect.getHeight()) / 2;
 
         x += menuButton.x;
-        y += menuButton.y + (startButton.height * 0.2);
+        y += menuButton.y + (startButton.height * 0.3);
 
         if(menuClicked){
             Color tmp = g2d.getColor();
@@ -263,7 +266,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         y = (int)(scoreButton.getHeight() - sTxtRect.getHeight()) / 2;
 
         x += scoreButton.x;
-        y += scoreButton.y + (scoreButton.height * -0.1);
+        y += scoreButton.y + (scoreButton.height * 0);
 
         if(scoreClicked){
             Color tmp = g2d.getColor();
@@ -291,7 +294,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         y = (int)(infoButton.getHeight() - iTxtRect.getHeight()) / 2;
 
         x += infoButton.x;
-        y += infoButton.y + (infoButton.height * -0.6);
+        y += infoButton.y + (infoButton.height * -0.5);
 
         if(infoClicked){
             Color tmp = g2d.getColor();
