@@ -44,15 +44,13 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
         gameBoard = new GameBoard(this);
 
-        info = new Info(this);
+        info = new Info(this,new Dimension(450,400));
 
         homeMenu = new HomeMenu(this,new Dimension(450,400));
 
         this.add(homeMenu,BorderLayout.CENTER);
 
         this.setUndecorated(true);
-
-
     }
 
     public void initialize(){
@@ -93,14 +91,12 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.addWindowFocusListener(this);
     }
 
-
     private void autoLocate(){
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (size.width - this.getWidth()) / 2;
         int y = (size.height - this.getHeight()) / 2;
         this.setLocation(x,y);
     }
-
 
     @Override
     public void windowGainedFocus(WindowEvent windowEvent) {
