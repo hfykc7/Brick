@@ -172,7 +172,7 @@ public class Wall {
         tmp[2] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
         tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,GOLD);
-        //tmp[5] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CEMENT,GOLD);
+        tmp[5] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CEMENT,GOLD);
         return tmp;
     }
 
