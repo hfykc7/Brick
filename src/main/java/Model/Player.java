@@ -15,11 +15,19 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package Model;
 
-import test.Ball;
+import Model.Ball;
 
 import java.awt.*;
+
+/**
+ * This is Player class. Create player bar and implement operations of player bar.
+ *
+ * @author Cheo Kai Wen
+ * @version 1.5
+ * @since 2021
+ */
 
 public class Player {
 
@@ -30,13 +38,16 @@ public class Player {
 
     private final Rectangle playerFace;
     private final Point ballPoint;
+    /**
+     *
+     */
     private int moveAmount;
     private final int min;
     private final int max;
 
     public Player(Point ballPoint,int width,int height,Rectangle container) {
         this.ballPoint = ballPoint;
-        moveAmount = 0;
+        setMoveAmount(0);
         playerFace = makeRectangle(width, height);
         min = container.x + (width / 2);
         max = min + container.width - width;
@@ -52,7 +63,7 @@ public class Player {
     }
 
     public void move(){
-        double x = ballPoint.getX() + moveAmount;
+        double x = ballPoint.getX() + getMoveAmount();
         if(x < min || x > max)
             return;
         ballPoint.setLocation(x,ballPoint.getY());
@@ -60,15 +71,15 @@ public class Player {
     }
 
     public void moveLeft(){
-        moveAmount = -DEF_MOVE_AMOUNT;
+        setMoveAmount(-DEF_MOVE_AMOUNT);
     }
 
     public void moveRight(){
-        moveAmount = DEF_MOVE_AMOUNT;
+        setMoveAmount(DEF_MOVE_AMOUNT);
     }
 
     public void stop(){
-        moveAmount = 0;
+        setMoveAmount(0);
     }
 
     public Shape getPlayerFace(){
@@ -78,5 +89,19 @@ public class Player {
     public void moveTo(Point p){
         ballPoint.setLocation(p);
         playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
+    }
+
+    /**
+     * @return move amount
+     */
+    public int getMoveAmount() {
+        return moveAmount;
+    }
+
+    /**
+     * @param moveAmount
+     */
+    public void setMoveAmount(int moveAmount) {
+        this.moveAmount = moveAmount;
     }
 }

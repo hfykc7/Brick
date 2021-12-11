@@ -1,4 +1,6 @@
-package test;
+package View;
+
+import Model.GameFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +12,7 @@ import java.awt.geom.Rectangle2D;
 
 public class Info extends JComponent implements MouseListener, MouseMotionListener {
 
-    private static final String INFO_TITLE = "How to Play";
+    private static final String INFO_TITLE = "Guide";
     private static final String START = "1. Press SPACE : Start / Pause the game";
     private static final String LEFT = "2. Press Left: Move paddle to Left";
     private static final String RIGHT = "3. Press Right : Move paddle to Right";
@@ -40,7 +42,7 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
 
     public Info(GameFrame owner, Dimension area) {
 
-        picture_1 = Toolkit.getDefaultToolkit().getImage("pic/greywall.jpeg");
+        picture_1 = Toolkit.getDefaultToolkit().getImage("src/main/resources/greywall.jpeg");
 
         this.setFocusable(true);
         this.requestFocusInWindow();

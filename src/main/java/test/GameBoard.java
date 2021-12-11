@@ -17,6 +17,12 @@
  */
 package test;
 
+import Model.Ball;
+import Model.Brick;
+import Model.Player;
+import Model.Wall;
+import View.DebugConsole;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -54,6 +60,9 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     private final DebugConsole debugConsole;
 
+    /**
+     * @param owner
+     */
     public GameBoard(JFrame owner){
         super();
 

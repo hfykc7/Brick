@@ -1,4 +1,4 @@
-package test;
+package MainClass;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -17,7 +17,7 @@ public class FileController {
     }
 
     public static Integer[] readFromFile() throws IOException {
-        Stream<String> stream = Files.lines(Paths.get("Fileset/HighScore.txt"));
+        Stream<String> stream = Files.lines(Paths.get("src/main/resources/score.txt"));
         return stream.map(x -> Integer.valueOf(x)).sorted().toArray(Integer[]::new);
     }
 }

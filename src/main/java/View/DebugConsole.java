@@ -15,7 +15,12 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package View;
+
+import Model.Ball;
+import Model.Wall;
+import Model.DebugPanel;
+import test.GameBoard;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,7 +36,7 @@ public class DebugConsole extends JDialog implements WindowListener{
     private GameBoard gameBoard;
     private Wall wall;
 
-    public DebugConsole(JFrame owner,Wall wall,GameBoard gameBoard){
+    public DebugConsole(JFrame owner, Wall wall, GameBoard gameBoard){
 
         this.wall = wall;
         this.owner = owner;

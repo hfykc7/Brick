@@ -15,12 +15,12 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package Model;
 
-import test.GameBoard;
 import test.HomeMenu;
-import test.Info;
-import test.ScoreBoard;
+import View.ScoreBoard;
+import test.GameBoard;
+import View.Info;
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,11 +51,11 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
         info = new Info(this,new Dimension(450,400));
 
-       //scoreBoard = new ScoreBoard(this,new Dimension(450,400));
+        scoreBoard = new ScoreBoard(this,new Dimension(450,400));
 
         this.add(homeMenu,BorderLayout.CENTER);
         this.add(info,BorderLayout.CENTER);
-        //this.add(scoreBoard,BorderLayout.CENTER);
+        this.add(scoreBoard,BorderLayout.CENTER);
 
         this.setUndecorated(true);
     }
@@ -98,7 +98,6 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.addWindowFocusListener(this);
     }
 
-/*
     public void enableScoreBoard(){
         this.dispose();
         this.remove(homeMenu);
@@ -108,9 +107,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         //to avoid problems with graphics focus controller is added here
         this.addWindowFocusListener(this);
     }
-*/
 
-/*
     public void enableScoreHomeMenu() {
         this.dispose();
         this.remove(scoreBoard);
@@ -120,7 +117,6 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         //to avoid problems with graphics focus controller is added here
         this.addWindowFocusListener(this);
     }
-*/
 
     private void autoLocate(){
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
