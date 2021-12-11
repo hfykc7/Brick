@@ -15,13 +15,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test.Controller;
-
-import test.Model.Ball;
-import test.Model.Brick;
-import test.Model.Player;
-import test.Model.Wall;
-import test.View.DebugConsole;
+package test;
 
 import javax.swing.*;
 import java.awt.*;
@@ -66,7 +60,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         strLen = 0;
         showPauseMenu = false;
 
-        menuFont = new Font("Monospaced",Font.PLAIN,TEXT_SIZE);
+        menuFont = new Font("SansSerif",Font.PLAIN,TEXT_SIZE);
 
         this.initialize();
         message = "";

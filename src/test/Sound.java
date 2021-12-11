@@ -1,4 +1,4 @@
-package test.View;
+package test;
 
 import java.io.*;
 import javax.sound.sampled.*;

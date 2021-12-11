@@ -1,4 +1,4 @@
-package test.Controller;
+package test;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

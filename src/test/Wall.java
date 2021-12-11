@@ -15,8 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test.Model;
+package test;
 
+import test.*;
 import test.GoldBrick;
 
 import java.awt.*;
@@ -278,6 +279,8 @@ public class Wall {
     public void nextLevel(){
         bricks = levels[level++];
         this.brickCount = bricks.length;
+        this.brickCount = 1;
+
     }
 
     public boolean hasLevel(){

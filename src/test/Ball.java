@@ -1,4 +1,4 @@
-package test.Model;
+package test;
 
 import java.awt.*;
 import java.awt.geom.Point2D;

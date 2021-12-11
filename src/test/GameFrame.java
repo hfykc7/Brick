@@ -15,13 +15,15 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test.View;
+package test;
 
-import test.Controller.GameBoard;
+import test.GameBoard;
+import test.HomeMenu;
+import test.Info;
+import test.ScoreBoard;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 
