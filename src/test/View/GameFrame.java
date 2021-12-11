@@ -21,6 +21,7 @@ import test.Controller.GameBoard;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 
@@ -31,6 +32,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     private GameBoard gameBoard;
     private HomeMenu homeMenu;
     private Info info;
+    private ScoreBoard scoreBoard;
 
     private boolean gaming;
 
@@ -43,11 +45,15 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
         gameBoard = new GameBoard(this);
 
-        info = new Info(this,new Dimension(450,400));
-
         homeMenu = new HomeMenu(this,new Dimension(450,400));
 
+        info = new Info(this,new Dimension(450,400));
+
+       //scoreBoard = new ScoreBoard(this,new Dimension(450,400));
+
         this.add(homeMenu,BorderLayout.CENTER);
+        this.add(info,BorderLayout.CENTER);
+        //this.add(scoreBoard,BorderLayout.CENTER);
 
         this.setUndecorated(true);
     }
@@ -70,6 +76,16 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.addWindowFocusListener(this);
     }
 
+    public void enableHomeMenu(){
+        this.dispose();
+        this.remove(info);
+        this.add(homeMenu,BorderLayout.CENTER);
+        this.setUndecorated(false);
+        initialize();
+        /*to avoid problems with graphics focus controller is added here*/
+        this.addWindowFocusListener(this);
+    }
+
     public void enableInfo(){
         this.dispose();
         this.remove(homeMenu);
@@ -80,15 +96,29 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.addWindowFocusListener(this);
     }
 
-    public void enableHomeMenu(){
+/*
+    public void enableScoreBoard(){
         this.dispose();
-        this.remove(info);
-        this.add(homeMenu,BorderLayout.CENTER);
+        this.remove(homeMenu);
+        this.add(scoreBoard, BorderLayout.CENTER);
         this.setUndecorated(false);
         initialize();
-        /*to avoid problems with graphics focus controller is added here*/
+        //to avoid problems with graphics focus controller is added here
         this.addWindowFocusListener(this);
     }
+*/
+
+/*
+    public void enableScoreHomeMenu() {
+        this.dispose();
+        this.remove(scoreBoard);
+        this.add(homeMenu, BorderLayout.CENTER);
+        this.setUndecorated(false);
+        initialize();
+        //to avoid problems with graphics focus controller is added here
+        this.addWindowFocusListener(this);
+    }
+*/
 
     private void autoLocate(){
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
