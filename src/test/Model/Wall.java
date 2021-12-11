@@ -17,17 +17,20 @@
  */
 package test.Model;
 
+import test.GoldBrick;
+
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
 public class Wall {
 
-    private static final int LEVELS_COUNT = 4;
+    private static final int LEVELS_COUNT = 6;
 
     private static final int CLAY = 1;
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
+    private static final int GOLD = 4;
 
     private Random rnd;
     private Rectangle area;
@@ -168,6 +171,8 @@ public class Wall {
         tmp[1] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,CEMENT);
         tmp[2] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
         tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
+        tmp[4] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,GOLD);
+        //tmp[5] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CEMENT,GOLD);
         return tmp;
     }
 
@@ -302,6 +307,9 @@ public class Wall {
                 break;
             case CEMENT:
                 out = new CementBrick(point, size);
+                break;
+            case GOLD:
+                out = new GoldBrick(point, size);
                 break;
             default:
                 throw  new IllegalArgumentException(String.format("Unknown Type:%d\n",type));
