@@ -38,9 +38,7 @@ public class Player {
 
     private final Rectangle playerFace;
     private final Point ballPoint;
-    /**
-     *
-     */
+
     private int moveAmount;
     private final int min;
     private final int max;
@@ -99,7 +97,7 @@ public class Player {
     }
 
     /**
-     * @param moveAmount
+     * @param moveAmount set the move amount
      */
     public void setMoveAmount(int moveAmount) {
         this.moveAmount = moveAmount;
