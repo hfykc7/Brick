@@ -3,20 +3,18 @@ package Model;
 import java.awt.*;
 import java.awt.Point;
 import java.awt.geom.Point2D;
-import java.lang.reflect.GenericDeclaration;
-import java.lang.reflect.TypeVariable;
 import java.util.Random;
 
 /**
- * This is Brick class that contains logics and properties of the brick
+ * This is Brick class that contains logics and properties of brick
  *
  * @author Cheo Kai Wen
  * @version 2.0
- * @since 8/12/2021
+ * @since 9/12/2021
+ *
  */
 abstract public class Brick  {
 
-    public static final int MIN_CRACK = 1;
     public static final int DEF_CRACK_DEPTH = 1;
     public static final int DEF_STEPS = 35;
 
@@ -27,8 +25,7 @@ abstract public class Brick  {
 
     protected Shape brickFace;
 
-
-    private static Random rnd;
+    public static Random rnd;
 
     private final Color border;
     private final Color inner;
@@ -46,7 +43,6 @@ abstract public class Brick  {
         this.border = border;
         this.inner = inner;
         this.fullStrength = this.strength = strength;
-
     }
 
     public Shape BrickFace(){
@@ -55,7 +51,7 @@ abstract public class Brick  {
 
     protected abstract Shape makeBrickFace(Point pos,Dimension size);
 
-    public  boolean setImpact(Point2D point , int dir){
+    public  boolean setImpact(Point2D point, int dir){
         if(broken)
             return false;
         impact();

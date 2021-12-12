@@ -9,7 +9,8 @@ import java.awt.geom.RectangularShape;
  *
  * @author Cheo Kai Wen
  * @version 2.0
- * @since 8/12/2021
+ * @since 9/12/2021
+ *
  */
 abstract public class Ball {
 

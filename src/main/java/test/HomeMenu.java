@@ -17,7 +17,7 @@
  */
 package test;
 
-import Model.GameFrame;
+import Controller.GameFrame;
 import View.Sound;
 
 import javax.swing.*;

@@ -1,7 +1,5 @@
 package Model;
 
-import Model.Brick;
-
 import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
@@ -34,13 +32,12 @@ public class GoldBrick extends Brick {
             return false;
         super.impact();
         if(!super.isBroken()){
-            crack.makeCrack(point,dir);
+            crack.makeCrack(point,dir,this);
             updateBrick();
             return false;
         }
         return true;
     }
-
 
     @Override
     public Shape getBrick() {
@@ -61,4 +58,3 @@ public class GoldBrick extends Brick {
         brickFace = super.brickFace;
     }
 }
-

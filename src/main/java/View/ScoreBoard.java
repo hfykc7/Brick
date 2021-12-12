@@ -3,10 +3,8 @@ package View;
 // Java Program to illustrate Reading from FileReader
 // using BufferedReader Class
 
-//import MainClass.FileController;
-import Model.GameFrame;
+import Controller.GameFrame;
 
-import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -186,18 +184,14 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
 
         y *= 1.2;
     }
-
+/*
     // main driver method
-    public static void main(String[] args) throws Exception
-    {
-
+    private void reader throws IO Exception{
         // File path is passed as parameter
-        File file = new File(
-                "src/main/resources/score.txt");
+        File file = new File("src/main/resources/score.txt");
 
         // Creating an object of BufferedReader class
-        BufferedReader br
-                = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new FileReader(file));
 
         // Declaring a string variable
         String st;

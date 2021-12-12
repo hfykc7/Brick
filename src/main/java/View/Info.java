@@ -1,6 +1,6 @@
 package View;
 
-import Model.GameFrame;
+import Controller.GameFrame;
 
 import javax.swing.*;
 import java.awt.*;

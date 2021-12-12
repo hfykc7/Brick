@@ -4,20 +4,17 @@ import java.io.*;
 import javax.sound.sampled.*;
 
 /**
- * Sound class to play background music when run the game.
- *
+ * This is Sound class to play background music when running the game.
  * @author Cheo Kai Wen
- * @version 1.5
- * @since 2021
+ * @version 2.0
+ * @since 9/12/2021
  *
  */
-
 public class Sound{
 
     /**
      * @param s constructor to open audio input stream, get sound clip resource and load audio clip to play background music
      */
-
     public void playSound(String s) {
 
         try {

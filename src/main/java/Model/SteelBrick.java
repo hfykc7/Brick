@@ -17,8 +17,6 @@
  */
 package Model;
 
-import Model.Brick;
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
@@ -50,7 +48,7 @@ public class SteelBrick extends Brick {
         return brickFace;
     }
 
-    public  boolean setImpact(Point2D point , int dir){
+    public  boolean setImpact(Point2D point , Point dir){
         if(super.isBroken())
             return false;
         impact();

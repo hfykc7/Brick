@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class FileController {
 
     public static void appendToFile(int score) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Filetxt/HighScore.txt", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/score.txt", true));
         writer.write(score + "\n");
 
         writer.close();

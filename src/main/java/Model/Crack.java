@@ -5,6 +5,14 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
+/**
+ * This is Crack class that contains logics and properties of crack of the brick
+ *
+ * @author Cheo Kai Wen
+ * @version 2.0
+ * @since 9/12/2021
+ *
+ */
 public class Crack{
 
     private static final int CRACK_SECTIONS = 3;
@@ -17,19 +25,18 @@ public class Crack{
     public static final int VERTICAL = 100;
     public static final int HORIZONTAL = 200;
 
+    public static Random rnd = new Random();
+
     private final GeneralPath crack;
 
-    private static Random rnd;
     private final int crackDepth;
     private final int steps;
 
-    private Brick brick;
 
     public Crack(int crackDepth, int steps){
         crack = new GeneralPath();
         this.crackDepth = crackDepth;
         this.steps = steps;
-        this.brick = brick;
     }
 
     public GeneralPath draw(){
@@ -40,8 +47,8 @@ public class Crack{
         crack.reset();
     }
 
-    public void makeCrack(Point2D point, int direction){
-        Rectangle bounds = brick.BrickFace().getBounds();
+    protected void makeCrack(Point2D point, int direction, Brick bricks){
+        Rectangle bounds = bricks.brickFace.getBounds();
 
         Point impact = new Point((int)point.getX(),(int)point.getY());
         Point start = new Point();
@@ -78,7 +85,7 @@ public class Crack{
         }
     }
 
-    protected void makeCrack(Point start, Point end){
+    protected void makeCrack(Point start,Point end){
 
         GeneralPath path = new GeneralPath();
 

@@ -15,11 +15,11 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package Model;
+package Controller;
 
 import test.HomeMenu;
 import View.ScoreBoard;
-import View.GameBoard;
+import Controller.GameBoard;
 import View.Info;
 
 import javax.swing.*;
