@@ -17,10 +17,17 @@
  */
 package MainClass;
 
-import test.GameFrame;
+import Model.GameFrame;
 
 import java.awt.*;
 
+/**
+ *This is Main class for Brick Destroy game
+ *
+ * @author Cheo Kai Wen
+ * @version
+ * @since 2021
+ */
 public class GraphicsMain{
 
     public static void main(String[] args){

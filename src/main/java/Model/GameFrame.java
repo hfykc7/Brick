@@ -19,7 +19,7 @@ package Model;
 
 import test.HomeMenu;
 import View.ScoreBoard;
-import test.GameBoard;
+import View.GameBoard;
 import View.Info;
 
 import javax.swing.*;

@@ -20,7 +20,6 @@ package View;
 import Model.Ball;
 import Model.Wall;
 import Model.DebugPanel;
-import test.GameBoard;
 
 import javax.swing.*;
 import java.awt.*;
