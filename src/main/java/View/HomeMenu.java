@@ -29,6 +29,10 @@ import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
 /**
+ * This is HomeMenu class that show home menu page
+ * @author Cheo Kai Wen
+ * @version 2.0
+ * @since 9/12/2021
  *
  */
 public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener {
@@ -65,6 +69,11 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     Image picture;
 
+    /**
+     * This method is the constructor for HomeMenu
+     * @param owner GameController
+     * @param area dimension size
+     */
     public HomeMenu(GameController owner, Dimension area){
 
         picture = Toolkit.getDefaultToolkit().getImage("src/main/resources/brick.jpeg");
@@ -95,10 +104,18 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         buttonFont = new Font("CooperHewitt-Book",Font.PLAIN,startButton.height-2);
     }
 
+    /**
+     * This method is to paint the HomeMenu by calling drawMenu method
+     * @param g graphics
+     */
     public void paint(Graphics g){
         drawMenu((Graphics2D)g);
     }
 
+    /**
+     * draw the menu face of HomeMenu
+     * @param g2d graphics2D object
+     */
     public void drawMenu(Graphics2D g2d){
 
         drawContainer(g2d);
@@ -125,6 +142,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.setColor(prevColor);
     }
 
+    /**
+     * draw the background image and border for HomeMenu
+     * @param g2d graphics2D object
+     */
     private void drawContainer(Graphics2D g2d){
         Color prev = g2d.getColor();
 
@@ -135,6 +156,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.drawImage(picture,0,0,this);
     }
 
+    /**
+     * draw the texts on HomeMenu
+     * @param g2d graphics2D object
+     */
     private void drawText(Graphics2D g2d){
 
         g2d.setColor(TEXT_COLOR);
@@ -166,6 +191,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.drawString(CREDITS,sX,sY);
     }
 
+    /**
+     * draw the Back button on HomeMenu
+     * @param g2d graphics2D object
+     */
     private void drawButton(Graphics2D g2d){
 
         FontRenderContext frc = g2d.getFontRenderContext();
@@ -288,6 +317,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         y *= 1.2;
     }
 
+    /**
+     * implement this method when mouse is clicked
+     * @param mouseEvent mouse is clicked or not
+     */
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
@@ -306,6 +339,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         }
     }
 
+    /**
+     * implement this method when mouse is pressed
+     * @param mouseEvent mouse action
+     */
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
@@ -327,6 +364,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         }
     }
 
+    /**
+     * implement this method when mouse is released
+     * @param mouseEvent mouse is acted or not
+     */
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
         if(startClicked ){
@@ -362,6 +403,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     }
 
+    /**
+     * implement this method when mouse is moved
+     * @param mouseEvent mouse is acted or not
+     */
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();

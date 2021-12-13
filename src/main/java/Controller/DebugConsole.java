@@ -26,6 +26,13 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+/**
+ * This is DebugConsole class that make debug console
+ * @author Cheo Kai Wen
+ * @version 2.0
+ * @since 9/12/2021
+ *
+ */
 public class DebugConsole extends JDialog implements WindowListener{
 
     private static final String TITLE = "Debug Console";
@@ -35,6 +42,12 @@ public class DebugConsole extends JDialog implements WindowListener{
     private GameView gameBoard;
     private GameModel wall;
 
+    /**
+     * constructor of debugConsole
+     * @param owner the frame
+     * @param wall gamemodel
+     * @param gameBoard gameview
+     */
     public DebugConsole(JFrame owner, GameModel wall, GameView gameBoard){
 
         this.wall = wall;
@@ -48,6 +61,9 @@ public class DebugConsole extends JDialog implements WindowListener{
         this.pack();
     }
 
+    /**
+     * initialize the variables of debug console
+     */
     private void initialize(){
         this.setModal(true);
         this.setTitle(TITLE);
@@ -57,6 +73,9 @@ public class DebugConsole extends JDialog implements WindowListener{
         this.setFocusable(true);
     }
 
+    /**
+     * set location of debug console
+     */
     private void setLocation(){
         int x = ((owner.getWidth() - this.getWidth()) / 2) + owner.getX();
         int y = ((owner.getHeight() - this.getHeight()) / 2) + owner.getY();
@@ -68,6 +87,10 @@ public class DebugConsole extends JDialog implements WindowListener{
 
     }
 
+    /**
+     * implement when window closing
+     * @param windowEvent window is detected or not
+     */
     @Override
     public void windowClosing(WindowEvent windowEvent) {
         gameBoard.repaint();
@@ -88,6 +111,11 @@ public class DebugConsole extends JDialog implements WindowListener{
 
     }
 
+
+    /**
+     * implement when window activated
+     * @param windowEvent window is detected or not
+     */
     @Override
     public void windowActivated(WindowEvent windowEvent) {
         setLocation();

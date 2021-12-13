@@ -17,14 +17,14 @@ import java.io.IOException;
  * This is ScoreBoard class that display the name and score of the players
  *
  * @author Cheo Kai Wen
- * @version 1.0
+ * @version 2.0
  * @since 9/12/2021
  */
 public class ScoreBoard extends JComponent implements MouseListener, MouseMotionListener{
 
     private static final String SCORE_TITLE = "Score Board";
-    //private static final String NAME = "Name";
-    //private static final String SCORES = "Score";
+    private static final String NAME = "Name";
+    private static final String SCORES = "Score";
     private static final String BACK_TEXT = "BACK TO MENU";
 
     private static final Color TEXT_COLOR = Color.WHITE;
@@ -55,6 +55,12 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
     private String scoreText;
     private boolean backClicked;
 
+    /**
+     * make the score board page
+     * @param owner GameController
+     * @param area dimension
+     * @throws IOException
+     */
     public ScoreBoard(GameController owner, Dimension area) throws IOException {
 
         this.setFocusable(true);
@@ -83,10 +89,18 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         buttonFont = new Font("CooperHewitt-Book", Font.BOLD, backButton.height - 7);
     }
 
+    /**
+     * This method is to paint the ScoreBoard by calling drawMenu method
+     * @param g graphics
+     */
     public void paint(Graphics g){
         drawMenu((Graphics2D)g);
     }
 
+    /**
+     * draw the menu face of ScoreBoard
+     * @param g2d graphics2D object
+     */
     public void drawMenu (Graphics2D g2d){
 
         drawContainer(g2d);
@@ -109,6 +123,10 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         g2d.setColor(prevColor);
     }
 
+    /**
+     * draw the background and border for Scoreboard
+     * @param g2d graphics2D object
+     */
     private void drawContainer (Graphics2D g2d){
         Color prev = g2d.getColor();
 
@@ -129,6 +147,15 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         g2d.setColor(prev);
     }
 
+    private void drawString(Graphics g, String text, int x, int y) {
+        for (String line : text.split("\n"))
+            g.drawString(line, x, y += g.getFontMetrics().getHeight());
+    }
+
+    /**
+     * draw the texts on ScoreBoard
+     * @param g2d graphics2D object
+     */
     private void drawText (Graphics2D g2d) {
 
         g2d.setColor(TEXT_COLOR);
@@ -136,51 +163,40 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         FontRenderContext frc = g2d.getFontRenderContext();
 
         Rectangle2D scoreTitleRect = scoreTitleFont.getStringBounds(SCORE_TITLE, frc);
+        Rectangle2D nameRect = menuFont.getStringBounds(NAME, frc);
+        Rectangle2D scoresRect = menuFont.getStringBounds(SCORES, frc);
 
         int sX, sY;
 
         sY = (int) (menuFace.getHeight() / 6);
         sX = (int) (menuFace.getWidth() - scoreTitleRect.getWidth()) / 2;
-        sY += (int) scoreTitleRect.getHeight() * 1.1;// add 10% of String height between the two strings
-
+        sY += (int) scoreTitleRect.getHeight() * 1.1;
 
         g2d.setFont(scoreTitleFont);
         g2d.drawString(SCORE_TITLE, sX, sY);
-        /*
-
-        Rectangle2D nameRect = menuFont.getStringBounds(NAME, frc);
-        Rectangle2D scoresRect = menuFont.getStringBounds(SCORES, frc);
-
-
-
-        sX = (int) (menuFace.getWidth() - scoreTitleRect.getWidth()) / 2;
-        sY = (int) (menuFace.getHeight() / 5);
-
-
-
-        sX = (int)(menuFace.getWidth() - nameRect.getWidth()) / 5;
-        sY += (int) nameRect.getHeight() * 1.4;
 
         g2d.setFont(menuFont);
-        g2d.drawString(NAME,sX,sY);
-
-        sX = (int)(menuFace.getWidth() - scoresRect.getWidth()) / 2;
-        sY += (int) scoresRect.getHeight() * 0.1;
+        g2d.drawString(NAME,120,150);
 
         g2d.setFont(menuFont);
         g2d.drawString(SCORES,sX,sY);
 
-         */
+        g2d.setFont(menuFont);
+        g2d.drawString(SCORES,250,150);
 
         g2d.setColor(Color.WHITE);
         g2d.setFont(menuFont);
-        g2d.drawString(nameText,sX,sY);
+        g2d.drawString(nameText,120,180);
 
         g2d.setColor(Color.WHITE);
         g2d.setFont(menuFont);
-        g2d.drawString(scoreText,sX,sY);
+        g2d.drawString(scoreText,260,180);
     }
 
+    /**
+     * draw the Back button on ScoreBoard
+     * @param g2d graphics2D object
+     */
     private void drawButton (Graphics2D g2d){
 
         FontRenderContext frc = g2d.getFontRenderContext();
@@ -219,6 +235,11 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         y *= 1.2;
     }
 
+    /**
+     * display score result
+     * @return score result in string array
+     * @throws IOException
+     */
     private String displayScore() throws IOException {
         Integer[] score = FileController.readFromFile();
         String result = StringUtils.join(score,"\n");
@@ -227,6 +248,11 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
     }
 
 
+    /**
+     * display name input by player
+     * @return name input by player in string array
+     * @throws IOException
+     */
     private String displayName() throws IOException {
         String[] name = FileController.readFromFileName();
         String result = StringUtils.join(name,"\n");
@@ -234,6 +260,10 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         return result;
     }
 
+    /**
+     * implement this method when mouse is clicked
+     * @param mouseEvent mouse is clicked or not
+     */
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
@@ -242,6 +272,10 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         }
     }
 
+    /**
+     * implement this method when mouse is pressed
+     * @param mouseEvent mouse action
+     */
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
@@ -251,6 +285,10 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         }
     }
 
+    /**
+     * implement this method when mouse is released
+     * @param mouseEvent mouse is acted or not
+     */
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
         if (backClicked) {
@@ -274,6 +312,10 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
 
     }
 
+    /**
+     * implement this method when mouse is moved
+     * @param mouseEvent mouse is acted or not
+     */
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
