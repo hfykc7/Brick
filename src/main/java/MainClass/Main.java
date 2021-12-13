@@ -17,7 +17,7 @@
  */
 package MainClass;
 
-import Model.GameFrame;
+import View.GameFrame;
 
 import java.awt.*;
 
@@ -28,7 +28,7 @@ import java.awt.*;
  * @version
  * @since 2021
  */
-public class GraphicsMain{
+public class Main{
 
     public static void main(String[] args){
         EventQueue.invokeLater(() -> new GameFrame().initialize());
