@@ -23,8 +23,8 @@ import java.io.IOException;
 public class ScoreBoard extends JComponent implements MouseListener, MouseMotionListener{
 
     private static final String SCORE_TITLE = "Score Board";
-    private static final String NAME = "Name";
-    private static final String SCORES = "Score";
+    //private static final String NAME = "Name";
+    //private static final String SCORES = "Score";
     private static final String BACK_TEXT = "BACK TO MENU";
 
     private static final Color TEXT_COLOR = Color.WHITE;
@@ -136,16 +136,27 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         FontRenderContext frc = g2d.getFontRenderContext();
 
         Rectangle2D scoreTitleRect = scoreTitleFont.getStringBounds(SCORE_TITLE, frc);
+
+        int sX, sY;
+
+        sY = (int) (menuFace.getHeight() / 6);
+        sX = (int) (menuFace.getWidth() - scoreTitleRect.getWidth()) / 2;
+        sY += (int) scoreTitleRect.getHeight() * 1.1;// add 10% of String height between the two strings
+
+
+        g2d.setFont(scoreTitleFont);
+        g2d.drawString(SCORE_TITLE, sX, sY);
+        /*
+
         Rectangle2D nameRect = menuFont.getStringBounds(NAME, frc);
         Rectangle2D scoresRect = menuFont.getStringBounds(SCORES, frc);
 
-        int sX, sY;
+
 
         sX = (int) (menuFace.getWidth() - scoreTitleRect.getWidth()) / 2;
         sY = (int) (menuFace.getHeight() / 5);
 
-        g2d.setFont(scoreTitleFont);
-        g2d.drawString(SCORE_TITLE, sX, sY);
+
 
         sX = (int)(menuFace.getWidth() - nameRect.getWidth()) / 5;
         sY += (int) nameRect.getHeight() * 1.4;
@@ -158,6 +169,8 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
 
         g2d.setFont(menuFont);
         g2d.drawString(SCORES,sX,sY);
+
+         */
 
         g2d.setColor(Color.WHITE);
         g2d.setFont(menuFont);
