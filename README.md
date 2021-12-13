@@ -45,13 +45,17 @@ Press <kbd>ALT</kbd> + <kbd>SHITF</kbd> + <kbd>F1</kbd> : Open console<br>
 
 ## Addition ##
 1. Added ScoreBoard
-- ScoreBoard displays the past scores by player
-- Input page will show up when game over, 
+- ScoreBoard displays the previous scores of user with their names
+- Input page will show up when game over, letting user to input their names to save their scores
+- Clicking the Scoreboard button on HomeMenu screen will direct you to ScoreBoard page
+- Added Back to Main button to return to HomeMenu
 
 2. Added Info page
+- Clicking the Info button on HomeMenu screen will direct you to Info page
+- Added Back to Main button to return to HomeMenu
 - Info displays the command keys to play the game
 
-3. Added additional levels and one different Brick type
+3. Added additional levels and different Brick type
 - More levels available for the player to play
 - When level increases, the bricks are harder and will crack before breaking
  
