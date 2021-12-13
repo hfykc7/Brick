@@ -17,8 +17,6 @@
  */
 package Controller;
 
-import Model.Wall;
-
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
