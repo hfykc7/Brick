@@ -17,13 +17,13 @@ public class Sound{
      */
     public void playSound(String s) {
 
+        Clip clip;
+
         try {
-            File soundFile = new File("src/main/resources/bgm.wav");
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-
-            Clip clip = AudioSystem.getClip();
-
-            clip.open(audioIn);
+            AudioInputStream audio = AudioSystem.getAudioInputStream(new File("src/main/resources/bgmusic.wav"));
+            clip = AudioSystem.getClip();
+            clip.open(audio);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
             clip.start();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
