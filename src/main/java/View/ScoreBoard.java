@@ -1,9 +1,8 @@
 package View;
 
-// Java Program to illustrate Reading from FileReader
-// using BufferedReader Class
-
-import Model.GameFrame;
+import Controller.FileController;
+import Controller.GameController;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,12 +11,20 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
+import java.io.IOException;
 
+/**
+ * This is ScoreBoard class that display the name and score of the players
+ *
+ * @author Cheo Kai Wen
+ * @version 1.0
+ * @since 9/12/2021
+ */
 public class ScoreBoard extends JComponent implements MouseListener, MouseMotionListener{
 
     private static final String SCORE_TITLE = "Score Board";
     private static final String NAME = "Name";
-    private static final String SCORES = "Scores";
+    private static final String SCORES = "Score";
     private static final String BACK_TEXT = "BACK TO MENU";
 
     private static final Color TEXT_COLOR = Color.WHITE;
@@ -41,11 +48,14 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
     private Rectangle menuFace;
     private Rectangle backButton;
 
-    private GameFrame owner;
+    private GameController owner;
 
+    private int scoreToPrint = 20;
+    private String nameText;
+    private String scoreText;
     private boolean backClicked;
 
-    public ScoreBoard(GameFrame owner, Dimension area) {
+    public ScoreBoard(GameController owner, Dimension area) throws IOException {
 
         this.setFocusable(true);
         this.requestFocusInWindow();
@@ -54,6 +64,9 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
         this.addMouseMotionListener(this);
 
         this.owner = owner;
+
+        nameText = displayName();
+        scoreText = displayScore();
 
         menuFace = new Rectangle(new Point(0, 0), area);
         this.setPreferredSize(area);
@@ -145,6 +158,14 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
 
         g2d.setFont(menuFont);
         g2d.drawString(SCORES,sX,sY);
+
+        g2d.setColor(Color.WHITE);
+        g2d.setFont(menuFont);
+        g2d.drawString(nameText,sX,sY);
+
+        g2d.setColor(Color.WHITE);
+        g2d.setFont(menuFont);
+        g2d.drawString(scoreText,sX,sY);
     }
 
     private void drawButton (Graphics2D g2d){
@@ -184,31 +205,21 @@ public class ScoreBoard extends JComponent implements MouseListener, MouseMotion
 
         y *= 1.2;
     }
-/*
-    // main driver method
-    private void reader throws IO Exception{
-        // File path is passed as parameter
-        File file = new File("src/main/resources/score.txt");
 
-        // Creating an object of BufferedReader class
-        BufferedReader br = new BufferedReader(new FileReader(file));
+    private String displayScore() throws IOException {
+        Integer[] score = FileController.readFromFile();
+        String result = StringUtils.join(score,"\n");
 
-        // Declaring a string variable
-        String st;
-
-        while ((st = br.readLine()) != null)
-
-            // Print the string
-            System.out.println(st);
+        return result;
     }
 
-    /*
-    private String displayScores() throws IOException {
-        Integer[] scores = FileController.readFromFile();
-        Arrays.sort(scores, Collections.reverseOrder());
-        return Arrays.toString(Arrays.stream(scores).limit(scoresToPrint).toArray());
+
+    private String displayName() throws IOException {
+        String[] name = FileController.readFromFileName();
+        String result = StringUtils.join(name,"\n");
+
+        return result;
     }
-*/
 
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {

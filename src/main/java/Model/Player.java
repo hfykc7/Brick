@@ -17,6 +17,8 @@
  */
 package Model;
 
+import Model.Ball;
+
 import java.awt.*;
 
 /**

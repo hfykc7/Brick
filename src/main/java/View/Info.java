@@ -1,6 +1,6 @@
 package View;
 
-import Model.GameFrame;
+import Controller.GameController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +18,7 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     private static final String RIGHT = "3. Press Right : Move paddle to Right";
     private static final String PAUSE = "4. Press ESC : Enter / Exit pause menu";
     private static final String CONSOLE = "5. Press ALT + SHIFT + F1 : Open console";
-    private static final String BACK_TEXT = "BACK TO MENU";
+    private static final String BACK_TEXT = "BACK TO MAIN";
 
     private static final Color TEXT_COLOR = Color.BLACK;
     private static final Color CLICKED_BUTTON_COLOR = Color.DARK_GRAY;
@@ -34,13 +34,13 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     private Rectangle menuFace;
     private Rectangle backButton;
 
-    private GameFrame owner;
+    private GameController owner;
 
     private boolean backClicked;
 
     Image picture_1;
 
-    public Info(GameFrame owner, Dimension area) {
+    public Info(GameController owner, Dimension area) {
 
         picture_1 = Toolkit.getDefaultToolkit().getImage("src/main/resources/greywall.jpeg");
 

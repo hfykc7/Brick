@@ -17,7 +17,7 @@
  */
 package View;
 
-import Model.GameFrame;
+import Controller.GameController;
 import Model.Sound;
 
 import javax.swing.*;
@@ -56,7 +56,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     private final Rectangle infoButton;
     private final Rectangle quitButton;
 
-    private final GameFrame owner;
+    private final GameController owner;
 
     private boolean startClicked;
     private boolean scoreClicked;
@@ -65,7 +65,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     Image picture;
 
-    public HomeMenu(GameFrame owner,Dimension area){
+    public HomeMenu(GameController owner, Dimension area){
 
         picture = Toolkit.getDefaultToolkit().getImage("src/main/resources/brick.jpeg");
 

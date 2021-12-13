@@ -17,20 +17,32 @@
  */
 package MainClass;
 
-import View.GameFrame;
+import Controller.GameController;
 
 import java.awt.*;
+import java.io.IOException;
 
 /**
  *This is Main class for Brick Destroy game
  *
  * @author Cheo Kai Wen
- * @version
+ * @version 2.0
  * @since 2021
  */
 public class Main{
 
+    /**
+     * main method to run the game
+     * @param args string array argument
+     */
     public static void main(String[] args){
-        EventQueue.invokeLater(() -> new GameFrame().initialize());
+
+        EventQueue.invokeLater(() -> {
+            try {
+                new GameController().initialize();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }

@@ -23,7 +23,7 @@ abstract public class Brick  {
     public static final int LEFT_IMPACT = 300;
     public static final int RIGHT_IMPACT = 400;
 
-    protected Shape brickFace;
+    public Shape brickFace;
 
     public static Random rnd;
 
