@@ -15,11 +15,11 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package Controller;
+package Model;
 
-import test.HomeMenu;
-import View.ScoreBoard;
 import Controller.GameBoard;
+import View.HomeMenu;
+import View.ScoreBoard;
 import View.Info;
 
 import javax.swing.*;
@@ -27,6 +27,14 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 
+/**
+ * This is GameFrame class
+ *
+ * @author Cheo Kai Wen
+ * @version 2.0
+ * @since 9/12/2021
+ *
+ */
 public class GameFrame extends JFrame implements WindowFocusListener {
 
     private static final String DEF_TITLE = "Brick Destroy";
@@ -38,6 +46,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     private boolean gaming;
 
+    /**
+     *
+     */
     public GameFrame(){
         super();
 

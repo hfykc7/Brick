@@ -20,7 +20,6 @@ package Controller;
 import Model.Ball;
 import Model.Brick;
 import Model.Player;
-import Model.Wall;
 import View.DebugConsole;
 
 import javax.swing.*;
@@ -28,6 +27,14 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 
+/**
+ * This is GameBoard class
+ *
+ * @author Cheo Kai Wen
+ * @version 2.0
+ * @since 9/12/2021
+ *
+ */
 public class GameBoard extends JComponent implements KeyListener,MouseListener,MouseMotionListener {
 
     private static final String CONTINUE = "Continue";

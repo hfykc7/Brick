@@ -17,7 +17,7 @@
  */
 package MainClass;
 
-import Controller.GameFrame;
+import Model.GameFrame;
 
 import java.awt.*;
 

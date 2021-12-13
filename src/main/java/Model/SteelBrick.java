@@ -21,6 +21,14 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
+/**
+ * This is SteelBrick class which inherits from Brick Class
+ *
+ * @author Cheo Kai Wen
+ * @version 1.0
+ * @since 9/12/2021
+ *
+ */
 public class SteelBrick extends Brick {
 
     private static final String NAME = "Steel Brick";
@@ -29,25 +37,46 @@ public class SteelBrick extends Brick {
     private static final int STEEL_STRENGTH = 1;
     private static final double STEEL_PROBABILITY = 0.4;
 
-    private Random rnd;
-    private Shape brickFace;
+    private final Random rnd;
+    private final Shape brickFace;
 
+    /**
+     * This is the constructor method for SteelBrick
+     * @param point point of the brick
+     * @param size dimension of the brick
+     */
     public SteelBrick(Point point, Dimension size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,STEEL_STRENGTH);
         rnd = new Random();
         brickFace = super.brickFace;
     }
 
+    /**
+     * create brick face
+     * @param pos position of the brick
+     * @param size size of the brick
+     * @return return steel brick
+     */
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
     }
 
+    /**
+     * get the brickFace to show the steel brick
+     * @return return the brickFace which is steel brick
+     */
     @Override
     public Shape getBrick() {
         return brickFace;
     }
 
+    /**
+     * This method is called when the ball hits the brick
+     * @param point point of the impact
+     * @param dir direction of the impact
+     * @return return boolean
+     */
     public  boolean setImpact(Point2D point , Point dir){
         if(super.isBroken())
             return false;
@@ -55,6 +84,9 @@ public class SteelBrick extends Brick {
         return  super.isBroken();
     }
 
+     /**
+     * impact the ball on the steel brick
+     */
     public void impact(){
         if(rnd.nextDouble() < STEEL_PROBABILITY){
             super.impact();

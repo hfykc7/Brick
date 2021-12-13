@@ -1,4 +1,4 @@
-package MainClass;
+package Controller;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

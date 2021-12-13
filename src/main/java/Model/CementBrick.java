@@ -8,7 +8,7 @@ import java.awt.geom.Point2D;
  * This is CementBrick class which inherits from Brick Class
  *
  * @author Cheo Kai Wen
- * @version 2.0
+ * @version 1.0
  * @since 9/12/2021
  *
  */
@@ -24,8 +24,8 @@ public class CementBrick extends Brick {
 
     /**
      *This is the constructor method for CementBrick
-     * @param point point where the brick will be drawn
-     * @param size  size of the brick
+     * @param point point of the brick
+     * @param size  dimension of the brick
      */
     public CementBrick(Point point, Dimension size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH);

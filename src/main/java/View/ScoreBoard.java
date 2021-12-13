@@ -3,7 +3,7 @@ package View;
 // Java Program to illustrate Reading from FileReader
 // using BufferedReader Class
 
-import Controller.GameFrame;
+import Model.GameFrame;
 
 import javax.swing.*;
 import java.awt.*;

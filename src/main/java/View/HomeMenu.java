@@ -15,10 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package View;
 
-import Controller.GameFrame;
-import View.Sound;
+import Model.GameFrame;
+import Model.Sound;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +28,9 @@ import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
+/**
+ *
+ */
 public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener {
 
     private static final String GREETINGS = "Welcome to";
@@ -42,18 +45,18 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     private static final Color CLICKED_BUTTON_COLOR = Color.GREEN;
     private static final Color CLICKED_TEXT = Color.LIGHT_GRAY;
 
-    private Font greetingsFont;
-    private Font gameTitleFont;
-    private Font creditsFont;
-    private Font buttonFont;
+    private final Font greetingsFont;
+    private final Font gameTitleFont;
+    private final Font creditsFont;
+    private final Font buttonFont;
 
-    private Rectangle menuFace;
-    private Rectangle startButton;
-    private Rectangle scoreButton;
-    private Rectangle infoButton;
-    private Rectangle quitButton;
+    private final Rectangle menuFace;
+    private final Rectangle startButton;
+    private final Rectangle scoreButton;
+    private final Rectangle infoButton;
+    private final Rectangle quitButton;
 
-    private GameFrame owner;
+    private final GameFrame owner;
 
     private boolean startClicked;
     private boolean scoreClicked;
